@@ -1,11 +1,16 @@
-export function makeHTML(entry, filename){
+export function makeHTML(entry, filename, calcs){
     const name = filename;
     const html = entry;
+    const maths = calcs;
     const template = `
     <section>
     ${name}
     <br>
-    <p>${html}<p>
+    <br>
+    ${maths}
+    <br>
+    <p id="data">Data:<p>
+     ${html}
     <section>
     `
     
@@ -18,13 +23,12 @@ export function makeIndex(entries){
     for (const entry in entries){
         if(entry>0){
         const name = entry;
-        console.log(name);
-        const link = `<li><a href="${`${name}.txt.html`}">${name}</a></li>`;
+        const link = `<li class="flex-item"><a href="${`${name}.txt.html`}">${name}</a></li>`;
         list += link;
         }
     }
 
-    return `<ul>${list}</ul>`;
+    return `<ul class="flex-container center">${list}</ul>`;
 }
 
 

@@ -20,6 +20,7 @@
     "cross-env": "^7.0.3",
     "gray-matter": "^4.0.3",
     "is-number": "^7.0.0",
-    "marked": "^4.0.12"
+    "marked": "^4.0.12",
+    "stats-lite": "^2.2.0"
   }
 }
