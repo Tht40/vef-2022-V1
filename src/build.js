@@ -1,10 +1,10 @@
 import {readFile, readdir, stat, writeFile} from 'fs/promises';
-import { mkdir } from 'fs';
+import { mkdir, write } from 'fs';
 import {join} from 'path';
 import graymatter from 'gray-matter';
 import {marked} from 'marked';
 
-import {makeHTML} from './make-html.js';
+import {makeHTML, blogTemplate, makeIndex} from './make-html.js';
 import {parse} from './parser.js';
 
 const BLOG_DIR = './data';
@@ -35,13 +35,27 @@ async function main(){
         const str = data.toString('utf-8');
         //console.log('str :>> ', str);
         const parsed = parse(str);
-        if(parsed.length !== 0){
+       /**if(parsed.length !== 0){
             group.push(parsed);
-        }
+        }*/
+        
+        
+        const html = makeHTML(parsed, file);
+        const blog = blogTemplate('nafn síðu', html)
+        const filename = join(OUTPUT_DIR, `${file}.html`);
+
+        await writeFile(filename, blog, {flag: 'w+'});
+
+        group.push(parsed);
         
         
     }
-    console.log(group);
+    //console.log(group);
+    const index = blogTemplate('Tolu Tofrar', makeIndex(group));
+    await writeFile(join(OUTPUT_DIR, 'index.html'), index, {flag: 'w+'});
+    
+
+    
    
 }
 
