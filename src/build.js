@@ -26,9 +26,9 @@ async function main(){
 
     
 
-   /* if(!(await direxists(OUTPUT_DIR))){
+    if(!(await direxists(OUTPUT_DIR))){
         await mkdir(OUTPUT_DIR);
-    }*/
+    }
 
     const group = [""];
 
