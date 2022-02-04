@@ -1,5 +1,5 @@
 import {readFile, readdir, stat, writeFile} from 'fs/promises';
-import { mkdir, write } from 'fs';
+import { mkdir, mkdirSync, write } from 'fs';
 import {join} from 'path';
 import graymatter from 'gray-matter';
 import {marked} from 'marked';
@@ -25,7 +25,7 @@ async function main(){
     const files = await readdir(BLOG_DIR);
 
     if(!(await direxists(OUTPUT_DIR))){
-        await mkdir(OUTPUT_DIR);
+        await mkdirSync(OUTPUT_DIR);
     }
 
     const group = [""];
