@@ -1,0 +1,23 @@
+{
+  "name": "veinn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS='--experimental-vm-modules' jest ./test/*.js",
+    "build": "node ./src/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "coverage": "^0.4.1",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^4.0.12"
+  }
+}
