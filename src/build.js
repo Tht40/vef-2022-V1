@@ -21,7 +21,7 @@ async function direxists(dir){
 async function main(){
     const files = await readdir(BLOG_DIR);
 
-    const group = [];
+    const group = [""];
 
     for (const file of files) {
         const path =  join(BLOG_DIR, file);
@@ -46,11 +46,11 @@ async function main(){
 
         await writeFile(filename, blog, {flag: 'w+'});
 
-        group.push(parsed);
+        group.push(JSON.stringify(file));
         
         
     }
-    //console.log(group);
+    
     const index = blogTemplate('Tolu Tofrar', makeIndex(group));
     await writeFile(join(OUTPUT_DIR, 'index.html'), index, {flag: 'w+'});
     

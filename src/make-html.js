@@ -5,7 +5,7 @@ export function makeHTML(entry, filename){
     <section>
     ${name}
     <br>
-    ${html}
+    <p>${html}<p>
     <section>
     `
     
@@ -14,10 +14,14 @@ export function makeHTML(entry, filename){
 
 export function makeIndex(entries){
     let list = '';
-    for (const entry of entries){
-        const {file, title } = entry;
-        const link = `<li><a href="${`${file}.html`}">${title}</a></li>`;
+    
+    for (const entry in entries){
+        if(entry>0){
+        const name = entry;
+        console.log(name);
+        const link = `<li><a href="${`${name}.txt.html`}">${name}</a></li>`;
         list += link;
+        }
     }
 
     return `<ul>${list}</ul>`;

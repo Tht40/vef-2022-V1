@@ -9,11 +9,22 @@ import isNumber from 'is-number';
 export function parse(input){
     var array = input.trim().split("\n").map(input => input.trim().split(" "));
     let numbs = [];
+    let cnt = 0;
     for( const i in array){
         var numb = array[i][0];
         numb = isnum(numb);
         if(numb !== null){
-            numbs.push(numb)
+            if(cnt === 5){
+                numb +="<br>";
+                cnt = 0;
+                numbs.push(numb);
+            }
+            
+            else{
+            numb += " \xa0\xa0 ";
+            numbs.push(numb);
+            cnt++;
+            }
         }
     }
     return numbs;
