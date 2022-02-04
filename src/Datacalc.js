@@ -1,5 +1,10 @@
-import {variance , stdev} from 'stats-lite'
+import {variance , stdev} from 'stats-lite' //calculator
 
+/**
+ * 
+ * @param {string} numbs takes in strings to put through maths
+ * @returns alot of fun calculations
+ */
 export function calculator(numbs) {
     const varians = variance(numbs);
     const max = Math.max(...numbs);
@@ -11,7 +16,6 @@ export function calculator(numbs) {
     const range = min.toString() + ' to ' + max.toString();
 
     return `
-    <a href="index.html">Forsíða</a>
     <div class="maths">
         <p> Variance = ${varians}</p>
         <p> Max = ${max}</p>

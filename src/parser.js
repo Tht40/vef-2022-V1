@@ -1,5 +1,3 @@
-import {marked} from 'marked';
-import matter from 'gray-matter';
 import isNumber from 'is-number';
 /**
  * 
@@ -9,7 +7,6 @@ import isNumber from 'is-number';
 export function parse(input){
     var array = input.trim().split("\n").map(input => input.trim().split(" "));
     let numbs = [];
-    let cnt = 0;
     for( const i in array){
         var numb = array[i][0];
         numb = isnum(numb);
@@ -22,7 +19,11 @@ export function parse(input){
     
     
 }
-
+/**
+ * 
+ * @param {string} data input string
+ * @returns a number if it is a number
+ */
 function isnum(data){
     const numb = isNumber(data)
     if(!numb){

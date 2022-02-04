@@ -1,3 +1,10 @@
+/**
+ * 
+ * @param {array} entry number array
+ * @param {string} filename name of the file
+ * @param {math program} calcs for the maths 
+ * @returns html for a txt file display
+ */
 export function makeHTML(entry, filename, calcs){
     const name = filename;
     const html = entry;
@@ -7,6 +14,7 @@ export function makeHTML(entry, filename, calcs){
     <div class="headd">
     ${name}
     </div>
+    <a href="index.html">Forsíða</a>
     <br>
     <br>
     ${maths}
@@ -20,7 +28,11 @@ export function makeHTML(entry, filename, calcs){
     
     return template;
 }
-
+/**
+ * 
+ * @param {string} entries input string
+ * @returns index
+ */
 export function makeIndex(entries){
     let list = '';
     
@@ -35,7 +47,12 @@ export function makeIndex(entries){
     return `<ul class="flex-container center">${list}</ul>`;
 }
 
-
+/**
+ * 
+ * @param {string} title website name
+ * @param {html} blog text to put in the body
+ * @returns a website whole
+ */
 export function blogTemplate(title, blog){
     return`
     <doctype html>
