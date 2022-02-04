@@ -4,13 +4,17 @@ export function makeHTML(entry, filename, calcs){
     const maths = calcs;
     const template = `
     <section>
+    <div class="headd">
     ${name}
+    </div>
     <br>
     <br>
     ${maths}
     <br>
-    <p id="data">Data:<p>
-     ${html}
+    <div class="data"><p>Data: </p><br>
+    ${html}
+    </div>
+    
     <section>
     `
     

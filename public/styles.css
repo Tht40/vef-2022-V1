@@ -36,3 +36,14 @@ li{
   text-align: center;
 }
 
+.data{
+  inline-size: 1010px;
+  overflow-wrap: break-word;
+  
+}
+
+.headd{
+    padding: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}

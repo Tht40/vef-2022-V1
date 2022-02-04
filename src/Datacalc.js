@@ -16,8 +16,8 @@ export function calculator(numbs) {
         <p> Variance = ${varians}</p>
         <p> Max = ${max}</p>
         <p> Mean = ${mean}</p>
-        <p> Meadian =${median}</p>
-        <p> Min =${min}</p>
+        <p> Meadian = ${median}</p>
+        <p> Min = ${min}</p>
         <p> Stdev = ${dev}</p>
         <p> Sum = ${sum}</p>
         <p> Range = ${range}</p>
