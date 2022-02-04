@@ -11,7 +11,7 @@ import {parse} from './parser.js';
 
 
 const BLOG_DIR = './data';
-const OUTPUT_DIR = '/dist';
+const OUTPUT_DIR = './dist';
 
 async function direxists(dir){
     try{
