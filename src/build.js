@@ -11,7 +11,7 @@ import {parse} from './parser.js';
 
 
 const BLOG_DIR = './data';
-const OUTPUT_DIR = './dist';
+const OUTPUT_DIR = '/dist';
 
 async function direxists(dir){
     try{
@@ -23,8 +23,6 @@ async function direxists(dir){
 }
 async function main(){
     const files = await readdir(BLOG_DIR);
-
-    
 
     if(!(await direxists(OUTPUT_DIR))){
         await mkdir(OUTPUT_DIR);
