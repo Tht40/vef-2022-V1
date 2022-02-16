@@ -1,15 +1,15 @@
 /**
- * 
+ *
  * @param {array} entry number array
  * @param {string} filename name of the file
- * @param {math program} calcs for the maths 
+ * @param {math program} calcs for the maths
  * @returns html for a txt file display
  */
-export function makeHTML(entry, filename, calcs){
-    const name = filename;
-    const html = entry;
-    const maths = calcs;
-    const template = `
+export function makeHTML(entry, filename, calcs) {
+  const name = filename;
+  const html = entry;
+  const maths = calcs;
+  const template = `
     <section>
     <div class="headd">
     ${name}
@@ -24,37 +24,37 @@ export function makeHTML(entry, filename, calcs){
     </div>
     
     <section>
-    `
-    
-    return template;
+    `;
+
+  return template;
 }
 /**
- * 
+ *
  * @param {string} entries input string
  * @returns index
  */
-export function makeIndex(entries){
-    let list = '';
-    
-    for (const entry in entries){
-        if(entry>0){
-        const name = entry;
-        const link = `<li class="flex-item"><a href="${`${name}.txt.html`}">${name}</a></li>`;
-        list += link;
-        }
-    }
+export function makeIndex(entries) {
+  let list = "";
 
-    return `<ul class="flex-container center">${list}</ul>`;
+  for (const entry in entries) {
+    if (entry > 0) {
+      const name = entry;
+      const link = `<li class="flex-item"><a href="${`${name}.txt.html`}">${name}</a></li>`;
+      list += link;
+    }
+  }
+
+  return `<ul class="flex-container center">${list}</ul>`;
 }
 
 /**
- * 
+ *
  * @param {string} title website name
  * @param {html} blog text to put in the body
  * @returns a website whole
  */
-export function blogTemplate(title, blog){
-    return`
+export function blogTemplate(title, blog) {
+  return `
     <doctype html>
     <html>
         <head>
@@ -64,7 +64,5 @@ export function blogTemplate(title, blog){
         <body>
             ${blog}
         </body>
-    </html>`
-    
-;
+    </html>`;
 }

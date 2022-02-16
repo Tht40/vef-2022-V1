@@ -1,12 +1,12 @@
-import  { describe, expect, it } from '@jest/globals';
-import {parse } from '..src/parser'
+import { describe, expect, it } from "@jest/globals";
+import { parse } from "..src/parser";
 
-describe('parser', () => {
-    it('parses a file to a number', () => {
-        const input = `/[0-9]/`
+describe("parser", () => {
+  it("parses a file to a number", () => {
+    const input = `/[0-9]/`;
 
-        const parsed = parse(input);
+    const parsed = parse(input);
 
-        expect(parsed).toBe(/[0-9]/);
-    });
+    expect(parsed).toBe(/[0-9]/);
+  });
 });
